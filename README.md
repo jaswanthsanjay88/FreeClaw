@@ -2,20 +2,22 @@
 
   <h1>FreeClaw: Ultra-Efficient AI Assistant in Go</h1>
 
-  <h3>$10 Hardware · 10MB RAM · 1s Boot · 皮皮虾，我们走！</h3>
+  <h3>$10 Hardware · 10MB RAM · 1s Boot</h3>
 
   <p>
     <br>
     <br>
   </p>
 
-[中文](README.zh.md) | [日本語](README.ja.md) | [Português](README.pt-br.md) | [Tiếng Việt](README.vi.md) | [Français](README.fr.md) | **English**
+**English**
 
 </div>
 
 ---
 
 🦐 FreeClaw is an ultra-lightweight personal AI Assistant inspired by [nanobot](https://github.com/HKUDS/nanobot), refactored from the ground up in Go through a self-bootstrapping process, where the AI agent itself drove the entire architectural migration and code optimization.
+
+Project origin: this project is taken from PicoClaw. Source repository: https://github.com/sipeed/picoclaw
 
 ⚡️ Runs on $10 hardware with <10MB RAM: That's 99% less memory than OpenClaw and 98% cheaper than a Mac mini!
 
@@ -33,7 +35,7 @@
 </table>
 
 > [!CAUTION]
-> **🚨 SECURITY & OFFICIAL CHANNELS / 安全声明**
+> **🚨 SECURITY & OFFICIAL CHANNELS**
 >
 > * **NO CRYPTO:** FreeClaw has **NO** official token/coin. All claims on `pump.fun` or other trading platforms are **SCAMS**.
 >
@@ -599,7 +601,7 @@ freeclaw gateway
 </details>
 
 <details>
-<summary><b>WeCom (企业微信)</b></summary>
+<summary><b>WeCom</b></summary>
 
 FreeClaw supports three types of WeCom integration:
 
@@ -607,7 +609,7 @@ FreeClaw supports three types of WeCom integration:
 **Option 2: WeCom App (Custom App)** - More features, proactive messaging, private chat only
 **Option 3: WeCom AI Bot (AI Bot)** - Official AI Bot, streaming replies, supports group & private chat
 
-See [WeCom AI Bot Configuration Guide](docs/channels/wecom/wecom_aibot/README.zh.md) for detailed setup instructions.
+See [WeCom AI Bot Configuration Guide](docs/channels/wecom/wecom_aibot/README.md) for detailed setup instructions.
 
 **Quick Setup - WeCom Bot:**
 
@@ -992,20 +994,20 @@ This design also enables **multi-agent support** with flexible provider selectio
 | ------------------- | ----------------- |-----------------------------------------------------| --------- | ---------------------------------------------------------------- |
 | **OpenAI**          | `openai/`         | `https://api.openai.com/v1`                         | OpenAI    | [Get Key](https://platform.openai.com)                           |
 | **Anthropic**       | `anthropic/`      | `https://api.anthropic.com/v1`                      | Anthropic | [Get Key](https://console.anthropic.com)                         |
-| **智谱 AI (GLM)**   | `zhipu/`          | `https://open.bigmodel.cn/api/paas/v4`              | OpenAI    | [Get Key](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys) |
+| **Zhipu AI (GLM)**  | `zhipu/`          | `https://open.bigmodel.cn/api/paas/v4`              | OpenAI    | [Get Key](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys) |
 | **DeepSeek**        | `deepseek/`       | `https://api.deepseek.com/v1`                       | OpenAI    | [Get Key](https://platform.deepseek.com)                         |
 | **Google Gemini**   | `gemini/`         | `https://generativelanguage.googleapis.com/v1beta`  | OpenAI    | [Get Key](https://aistudio.google.com/api-keys)                  |
 | **Groq**            | `groq/`           | `https://api.groq.com/openai/v1`                    | OpenAI    | [Get Key](https://console.groq.com)                              |
 | **Moonshot**        | `moonshot/`       | `https://api.moonshot.cn/v1`                        | OpenAI    | [Get Key](https://platform.moonshot.cn)                          |
-| **通义千问 (Qwen)** | `qwen/`           | `https://dashscope.aliyuncs.com/compatible-mode/v1` | OpenAI    | [Get Key](https://dashscope.console.aliyun.com)                  |
+| **Qwen**            | `qwen/`           | `https://dashscope.aliyuncs.com/compatible-mode/v1` | OpenAI    | [Get Key](https://dashscope.console.aliyun.com)                  |
 | **NVIDIA**          | `nvidia/`         | `https://integrate.api.nvidia.com/v1`               | OpenAI    | [Get Key](https://build.nvidia.com)                              |
 | **Ollama**          | `ollama/`         | `http://localhost:11434/v1`                         | OpenAI    | Local (no key needed)                                            |
 | **OpenRouter**      | `openrouter/`     | `https://openrouter.ai/api/v1`                      | OpenAI    | [Get Key](https://openrouter.ai/keys)                            |
 | **LiteLLM Proxy**   | `litellm/`        | `http://localhost:4000/v1`                          | OpenAI    | Your LiteLLM proxy key                                            |
 | **VLLM**            | `vllm/`           | `http://localhost:8000/v1`                          | OpenAI    | Local                                                            |
 | **Cerebras**        | `cerebras/`       | `https://api.cerebras.ai/v1`                        | OpenAI    | [Get Key](https://cerebras.ai)                                   |
-| **火山引擎**        | `volcengine/`     | `https://ark.cn-beijing.volces.com/api/v3`          | OpenAI    | [Get Key](https://console.volcengine.com)                        |
-| **神算云**          | `shengsuanyun/`   | `https://router.shengsuanyun.com/api/v1`            | OpenAI    | -                                                                |
+| **Volcengine**      | `volcengine/`     | `https://ark.cn-beijing.volces.com/api/v3`          | OpenAI    | [Get Key](https://console.volcengine.com)                        |
+| **Shengsuanyun**    | `shengsuanyun/`   | `https://router.shengsuanyun.com/api/v1`            | OpenAI    | -                                                                |
 | **Vivgrid**         | `vivgrid/`        | `https://api.vivgrid.com/v1`                        | OpenAI    | [Get Key](https://vivgrid.com)                                   |
 | **Antigravity**     | `antigravity/`    | Google Cloud                                        | Custom    | OAuth only                                                       |
 | **GitHub Copilot**  | `github-copilot/` | `localhost:4321`                                    | gRPC      | -                                                                |
@@ -1051,7 +1053,7 @@ This design also enables **multi-agent support** with flexible provider selectio
 }
 ```
 
-**智谱 AI (GLM)**
+**Zhipu AI (GLM)**
 
 ```json
 {
@@ -1476,4 +1478,5 @@ This happens when another instance of the bot is running. Make sure only one `fr
 | **SearXNG**      | Unlimited (self-hosted)  | Privacy-focused metasearch (70+ engines) |
 | **Groq**         | Free tier available      | Fast inference (Llama, Mixtral)       |
 | **Cerebras**     | Free tier available      | Fast inference (Llama, Qwen, etc.)    |
+
 
