@@ -1,21 +1,28 @@
-# Long-term Memory
+# MEMORY
 
-This file stores important information that should persist across sessions.
+Persistent workspace memory for decisions, facts, and stable preferences.
 
-## User Information
+## Stable Facts
 
-(Important facts about user)
+- Repository: `e:\FreeClaw\freeclaw`
+- Main runtime command: `go run ./cmd/freeclaw gateway`
+- Preferred WhatsApp integration: WAReplyMate channel
+- GitHub repo: `https://github.com/jaswanthsanjay88/FreeClaw.git`
 
-## Preferences
+## User Preferences
 
-(User preferences learned over time)
+- Wants direct execution, not only plans.
+- Prefers concise responses.
+- Prioritizes practical fixes and successful push/deploy outcomes.
 
-## Important Notes
+## Operational Notes
 
-(Things to remember)
+- If push fails with secret scanning, sanitize literals and retry.
+- Verify branch/remote before force updates.
+- Keep owner chat responses clean (avoid tool-call leakage).
 
-## Configuration
+## Update Rules
 
-- Model preferences
-- Channel settings
-- Skills enabled
+- Add only durable facts.
+- Remove obsolete entries when behavior changes.
+- Keep this file short and high-signal.

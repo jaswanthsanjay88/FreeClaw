@@ -1,21 +1,27 @@
-# User
+# USER
 
-Information about user goes here.
+This file stores known user preferences and profile facts.
 
-## Preferences
+## Profile
 
-- Communication style: (casual/formal)
-- Timezone: (your timezone)
-- Language: (your preferred language)
+- Name: Jaswanth (update if user provides preferred display name)
+- Preferred language: English
+- Platform: Windows
 
-## Personal Information
+## Communication Preferences
 
-- Name: (optional)
-- Location: (optional)
-- Occupation: (optional)
+- Style: direct, practical, result-first
+- Response length: short unless detail is requested
+- Priorities: reliability, working runtime, successful GitHub push, clear docs
 
-## Learning Goals
+## Current Project Focus
 
-- What the user wants to learn from AI
-- Preferred interaction style
-- Areas of interest
+- Project: FreeClaw
+- Channels: WAReplyMate/WhatsApp, Telegram
+- Goal: stable owner/non-owner behavior and clean user-facing responses
+
+## Working Agreements
+
+- Execute changes end-to-end where feasible.
+- Validate with compile/test before claiming done.
+- Keep documentation aligned with runtime behavior.
