@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>PicoClaw: Ultra-Efficient AI Assistant in Go</h1>
+  <h1>FreeClaw: Ultra-Efficient AI Assistant in Go</h1>
 
   <h3>$10 Hardware · 10MB RAM · 1s Boot · 皮皮虾，我们走！</h3>
 
@@ -15,7 +15,7 @@
 
 ---
 
-🦐 PicoClaw is an ultra-lightweight personal AI Assistant inspired by [nanobot](https://github.com/HKUDS/nanobot), refactored from the ground up in Go through a self-bootstrapping process, where the AI agent itself drove the entire architectural migration and code optimization.
+🦐 FreeClaw is an ultra-lightweight personal AI Assistant inspired by [nanobot](https://github.com/HKUDS/nanobot), refactored from the ground up in Go through a self-bootstrapping process, where the AI agent itself drove the entire architectural migration and code optimization.
 
 ⚡️ Runs on $10 hardware with <10MB RAM: That's 99% less memory than OpenClaw and 98% cheaper than a Mac mini!
 
@@ -35,7 +35,7 @@
 > [!CAUTION]
 > **🚨 SECURITY & OFFICIAL CHANNELS / 安全声明**
 >
-> * **NO CRYPTO:** PicoClaw has **NO** official token/coin. All claims on `pump.fun` or other trading platforms are **SCAMS**.
+> * **NO CRYPTO:** FreeClaw has **NO** official token/coin. All claims on `pump.fun` or other trading platforms are **SCAMS**.
 >
 > * **OFFICIAL DOMAIN:** The **ONLY** official website is **[freeclaw.io](https://freeclaw.io)**, and company website is **[sipeed.com](https://sipeed.com)**
 > * **Warning:** Many `.ai/.org/.com/.net/...` domains are registered by third parties.
@@ -44,12 +44,12 @@
 
 ## 📢 News
 
-2026-02-16 🎉 PicoClaw hit 12K stars in one week! Thank you all for your support! PicoClaw is growing faster than we ever imagined. Given the high volume of PRs, we urgently need community maintainers. Our volunteer roles and roadmap are officially posted [here](ROADMAP.md) —we can’t wait to have you on board!
+2026-02-16 🎉 FreeClaw hit 12K stars in one week! Thank you all for your support! FreeClaw is growing faster than we ever imagined. Given the high volume of PRs, we urgently need community maintainers. Our volunteer roles and roadmap are officially posted [here](ROADMAP.md) —we can’t wait to have you on board!
 
-2026-02-13 🎉 PicoClaw hit 5000 stars in 4days! Thank you for the community! There are so many PRs & issues coming in (during Chinese New Year holidays), we are finalizing the Project Roadmap and setting up the Developer Group to accelerate PicoClaw's development.  
+2026-02-13 🎉 FreeClaw hit 5000 stars in 4days! Thank you for the community! There are so many PRs & issues coming in (during Chinese New Year holidays), we are finalizing the Project Roadmap and setting up the Developer Group to accelerate FreeClaw's development.  
 🚀 Call to Action: Please submit your feature requests in GitHub Discussions. We will review and prioritize them during our upcoming weekly meeting.
 
-2026-02-09 🎉 PicoClaw Launched! Built in 1 day to bring AI Agents to $10 hardware with <10MB RAM. 🦐 PicoClaw，Let's Go！
+2026-02-09 🎉 FreeClaw Launched! Built in 1 day to bring AI Agents to $10 hardware with <10MB RAM. 🦐 FreeClaw，Let's Go！
 
 ## ✨ Features
 
@@ -65,7 +65,7 @@
 
 💬 **WhatsApp Ready (No Web Scraping)**: WAReplyMate bridge integration works reliably using API + SQLite polling, without web scraping.
 
-|                               | OpenClaw      | NanoBot                  | **PicoClaw**                              |
+|                               | OpenClaw      | NanoBot                  | **FreeClaw**                              |
 | ----------------------------- | ------------- | ------------------------ | ----------------------------------------- |
 | **Language**                  | TypeScript    | Python                   | **Go**                                    |
 | **RAM**                       | >1GB          | >100MB                   | **< 10MB**                                |
@@ -94,7 +94,7 @@
 
 ### 📱 Run on old Android Phones
 
-Give your decade-old phone a second life! Turn it into a smart AI Assistant with PicoClaw. Quick Start:
+Give your decade-old phone a second life! Turn it into a smart AI Assistant with FreeClaw. Quick Start:
 
 1. **Install Termux** (Available on F-Droid or Google Play).
 2. **Execute cmds**
@@ -111,7 +111,7 @@ And then follow the instructions in the "Quick Start" section to complete the co
 
 ### 🐜 Innovative Low-Footprint Deploy
 
-PicoClaw can be deployed on almost any Linux device!
+FreeClaw can be deployed on almost any Linux device!
 
 - $9.9 [LicheeRV-Nano](https://www.aliexpress.com/item/1005006519668532.html) E(Ethernet) or W(WiFi6) version, for Minimal Home Assistant
 - $30~50 [NanoKVM](https://www.aliexpress.com/item/1005007369816019.html), or $100 [NanoKVM-Pro](https://www.aliexpress.com/item/1005010048471263.html) for Automated Server Maintenance
@@ -152,7 +152,7 @@ make install
 
 ## 🐳 Docker Compose
 
-You can also run PicoClaw using Docker Compose without installing anything locally.
+You can also run FreeClaw using Docker Compose without installing anything locally.
 
 ```bash
 # 1. Clone this repo
@@ -269,7 +269,7 @@ freeclaw onboard
 ```
 
 > **New**: The `model_list` configuration format allows zero-code provider addition. See [Model Configuration](#model-configuration-model_list) for details.
-> `request_timeout` is optional and uses seconds. If omitted or set to `<= 0`, PicoClaw uses the default timeout (120s).
+> `request_timeout` is optional and uses seconds. If omitted or set to `<= 0`, FreeClaw uses the default timeout (120s).
 
 **3. Get API Keys**
 
@@ -343,10 +343,10 @@ freeclaw gateway
 
 **4. Telegram command menu (auto-registered at startup)**
 
-PicoClaw now keeps command definitions in one shared registry. On startup, Telegram will automatically register supported bot commands (for example `/start`, `/help`, `/show`, `/list`) so command menu and runtime behavior stay in sync.
+FreeClaw now keeps command definitions in one shared registry. On startup, Telegram will automatically register supported bot commands (for example `/start`, `/help`, `/show`, `/list`) so command menu and runtime behavior stay in sync.
 Telegram command menu registration remains channel-local discovery UX; generic command execution is handled centrally in the agent loop via the commands executor.
 
-If command registration fails (network/API transient errors), the channel still starts and PicoClaw retries registration in the background.
+If command registration fails (network/API transient errors), the channel still starts and FreeClaw retries registration in the background.
 
 </details>
 
@@ -426,7 +426,7 @@ freeclaw gateway
 <details>
 <summary><b>WhatsApp</b> (native via whatsmeow)</summary>
 
-PicoClaw can connect to WhatsApp in two ways:
+FreeClaw can connect to WhatsApp in two ways:
 
 - **Native (recommended):** In-process using [whatsmeow](https://github.com/tulir/whatsmeow). No separate bridge. Set `"use_native": true` and leave `bridge_url` empty. On first run, scan the QR code with WhatsApp (Linked Devices). Session is stored under your workspace (e.g. `workspace/whatsapp/`). The native channel is **optional** to keep the default binary small; build with `-tags whatsapp_native` (e.g. `make build-whatsapp-native` or `go build -tags whatsapp_native ./cmd/...`).
 - **Bridge:** Connect to an external WebSocket bridge. Set `bridge_url` (e.g. `ws://localhost:3001`) and keep `use_native` false.
@@ -601,7 +601,7 @@ freeclaw gateway
 <details>
 <summary><b>WeCom (企业微信)</b></summary>
 
-PicoClaw supports three types of WeCom integration:
+FreeClaw supports three types of WeCom integration:
 
 **Option 1: WeCom Bot (Bot)** - Easier setup, supports group chats
 **Option 2: WeCom App (Custom App)** - More features, proactive messaging, private chat only
@@ -712,7 +712,7 @@ freeclaw gateway
 </details>
 
 
-Connect Picoclaw to the Agent Social Network simply by sending a single message via the CLI or any integrated Chat App.
+Connect FreeClaw to the Agent Social Network simply by sending a single message via the CLI or any integrated Chat App.
 
 **Read `https://clawdchat.ai/skill.md` and follow the instructions to join [ClawdChat.ai](https://clawdchat.ai)**
 
@@ -747,7 +747,7 @@ FREECLAW_HOME=/srv/freeclaw FREECLAW_CONFIG=/srv/freeclaw/main.json freeclaw gat
 
 ### Workspace Layout
 
-PicoClaw stores data in your configured workspace (default: `~/.freeclaw/workspace`):
+FreeClaw stores data in your configured workspace (default: `~/.freeclaw/workspace`):
 
 ```
 ~/.freeclaw/workspace/
@@ -786,7 +786,7 @@ export FREECLAW_BUILTIN_SKILLS=/path/to/skills
 - Registered but unsupported command on the current channel (for example `/show` on WhatsApp) returns an explicit user-facing error and stops further processing.
 ### 🔒 Security Sandbox
 
-PicoClaw runs in a sandboxed environment by default. The agent can only access files and execute commands within the configured workspace.
+FreeClaw runs in a sandboxed environment by default. The agent can only access files and execute commands within the configured workspace.
 
 #### Default Configuration
 
@@ -880,7 +880,7 @@ All paths share the same workspace restriction — there's no way to bypass the 
 
 ### Heartbeat (Periodic Tasks)
 
-PicoClaw can perform periodic tasks automatically. Create a `HEARTBEAT.md` file in your workspace:
+FreeClaw can perform periodic tasks automatically. Create a `HEARTBEAT.md` file in your workspace:
 
 ```markdown
 # Periodic Tasks
@@ -977,7 +977,7 @@ The subagent has access to tools (message, web_search, etc.) and can communicate
 
 ### Model Configuration (model_list)
 
-> **What's New?** PicoClaw now uses a **model-centric** configuration approach. Simply specify `vendor/model` format (e.g., `zhipu/glm-4.7`) to add new providers—**zero code changes required!**
+> **What's New?** FreeClaw now uses a **model-centric** configuration approach. Simply specify `vendor/model` format (e.g., `zhipu/glm-4.7`) to add new providers—**zero code changes required!**
 
 This design also enables **multi-agent support** with flexible provider selection:
 
@@ -1115,11 +1115,11 @@ This design also enables **multi-agent support** with flexible provider selectio
 }
 ```
 
-PicoClaw strips only the outer `litellm/` prefix before sending the request, so proxy aliases like `litellm/lite-gpt4` send `lite-gpt4`, while `litellm/openai/gpt-4o` sends `openai/gpt-4o`.
+FreeClaw strips only the outer `litellm/` prefix before sending the request, so proxy aliases like `litellm/lite-gpt4` send `lite-gpt4`, while `litellm/openai/gpt-4o` sends `openai/gpt-4o`.
 
 #### Load Balancing
 
-Configure multiple endpoints for the same model name—PicoClaw will automatically round-robin between them:
+Configure multiple endpoints for the same model name—FreeClaw will automatically round-robin between them:
 
 ```json
 {
@@ -1186,7 +1186,7 @@ For detailed migration guide, see [docs/migration/model-list-migration.md](docs/
 
 ### Provider Architecture
 
-PicoClaw routes providers by protocol family:
+FreeClaw routes providers by protocol family:
 
 - OpenAI-compatible protocol: OpenRouter, OpenAI-compatible gateways, Groq, Zhipu, and vLLM-style endpoints.
 - Anthropic protocol: Claude-native API behavior.
@@ -1335,7 +1335,7 @@ freeclaw agent -m "Hello"
 
 ### Scheduled Tasks / Reminders
 
-PicoClaw supports scheduled reminders and recurring tasks through the `cron` tool:
+FreeClaw supports scheduled reminders and recurring tasks through the `cron` tool:
 
 * **One-time reminders**: "Remind me in 10 minutes" → triggers once after 10min
 * **Recurring tasks**: "Remind me every 2 hours" → triggers every 2 hours
@@ -1360,11 +1360,11 @@ discord: <https://discord.gg/V4sAZ9XWpN>
 
 ### Web search says "API key configuration issue"
 
-This is normal if you haven't configured a search API key yet. PicoClaw will provide helpful links for manual searching.
+This is normal if you haven't configured a search API key yet. FreeClaw will provide helpful links for manual searching.
 
 #### Search Provider Priority
 
-PicoClaw automatically selects the best available search provider in this order:
+FreeClaw automatically selects the best available search provider in this order:
 1. **Perplexity** (if enabled and API key configured) - AI-powered search with citations
 2. **Brave Search** (if enabled and API key configured) - Privacy-focused paid API ($5/1000 queries)
 3. **SearXNG** (if enabled and base_url configured) - Self-hosted metasearch aggregating 70+ engines (free)
@@ -1476,3 +1476,4 @@ This happens when another instance of the bot is running. Make sure only one `fr
 | **SearXNG**      | Unlimited (self-hosted)  | Privacy-focused metasearch (70+ engines) |
 | **Groq**         | Free tier available      | Fast inference (Llama, Mixtral)       |
 | **Cerebras**     | Free tier available      | Fast inference (Llama, Qwen, etc.)    |
+
