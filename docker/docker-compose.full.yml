@@ -1,0 +1,44 @@
+services:
+  # ─────────────────────────────────────────────
+  # PicoClaw Agent (one-shot query) - Full MCP Support
+  #   docker compose -f docker/docker-compose.full.yml run --rm freeclaw-agent -m "Hello"
+  # ─────────────────────────────────────────────
+  freeclaw-agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.full
+    container_name: freeclaw-agent-full
+    profiles:
+      - agent
+    volumes:
+      - ../config/config.json:/root/.freeclaw/config.json:ro
+      - freeclaw-workspace:/root/.freeclaw/workspace
+      - freeclaw-npm-cache:/root/.npm # npm cache for faster MCP server installs
+    entrypoint: ["freeclaw", "agent"]
+    stdin_open: true
+    tty: true
+
+  # ─────────────────────────────────────────────
+  # PicoClaw Gateway (Long-running Bot) - Full MCP Support
+  #   docker compose -f docker/docker-compose.full.yml --profile gateway up
+  # ─────────────────────────────────────────────
+  freeclaw-gateway:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.full
+    container_name: freeclaw-gateway-full
+    restart: unless-stopped
+    profiles:
+      - gateway
+    volumes:
+      # Configuration file
+      - ../config/config.json:/root/.freeclaw/config.json:ro
+      # Persistent workspace (sessions, memory, logs)
+      - freeclaw-workspace:/root/.freeclaw/workspace
+      # NPM cache for faster MCP server installs
+      - freeclaw-npm-cache:/root/.npm
+    command: ["gateway"]
+
+volumes:
+  freeclaw-workspace:
+  freeclaw-npm-cache: # Cache npm packages to speed up MCP server installations

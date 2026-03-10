@@ -1,0 +1,10 @@
+.git
+.gitignore
+build/
+.freeclaw/
+config/
+.env
+.env.example
+*.md
+LICENSE
+assets/

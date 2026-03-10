@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+    - go install github.com/tc-hib/go-winres@latest
+    - go-winres make --in cmd/freeclaw-launcher/winres/winres.json --out cmd/freeclaw-launcher/rsrc --product-version={{ .Version }} --file-version={{ .Version }}
+
+builds:
+  - id: freeclaw
+    env:
+      - CGO_ENABLED=0
+    tags:
+      - stdjson
+    ldflags:
+      - -s -w
+      - -X github.com/sipeed/freeclaw/cmd/freeclaw/internal.version={{ .Version }}
+      - -X github.com/sipeed/freeclaw/cmd/freeclaw/internal.gitCommit={{ .ShortCommit }}
+      - -X github.com/sipeed/freeclaw/cmd/freeclaw/internal.buildTime={{ .Date }}
+      - -X github.com/sipeed/freeclaw/cmd/freeclaw/internal.goVersion={{ .Env.GOVERSION }}
+    goos:
+      - linux
+      - windows
+      - darwin
+      - freebsd
+    goarch:
+      - amd64
+      - arm64
+      - riscv64
+      - loong64
+      - arm
+      - s390x
+      - mipsle
+    goarm:
+      - "6"
+      - "7"
+    gomips:
+      - softfloat
+    main: ./cmd/freeclaw
+    ignore:
+      - goos: windows
+        goarch: arm
+
+  - id: freeclaw-launcher
+    binary: freeclaw-launcher
+    env:
+      - CGO_ENABLED=0
+    tags:
+      - stdjson
+    ldflags:
+      - -s -w
+    goos:
+      - linux
+      - windows
+      - darwin
+      - freebsd
+    goarch:
+      - amd64
+      - arm64
+      - riscv64
+      - loong64
+      - arm
+      - s390x
+      - mipsle
+    goarm:
+      - "6"
+      - "7"
+    gomips:
+      - softfloat
+    main: ./cmd/freeclaw-launcher
+    ignore:
+      - goos: windows
+        goarch: arm
+
+  - id: freeclaw-launcher-tui
+    binary: freeclaw-launcher-tui
+    env:
+      - CGO_ENABLED=0
+    tags:
+      - stdjson
+    ldflags:
+      - -s -w
+    goos:
+      - linux
+      - windows
+      - darwin
+      - freebsd
+    goarch:
+      - amd64
+      - arm64
+      - riscv64
+      - loong64
+      - arm
+      - s390x
+      - mipsle
+    goarm:
+      - "6"
+      - "7"
+    gomips:
+      - softfloat
+    main: ./cmd/freeclaw-launcher-tui
+    ignore:
+      - goos: windows
+        goarch: arm
+
+dockers_v2:
+  - id: freeclaw
+    dockerfile: docker/Dockerfile.goreleaser
+    extra_files:
+      - docker/entrypoint.sh
+    ids:
+      - freeclaw
+    images:
+      - "ghcr.io/{{ .Env.GITHUB_REPOSITORY_OWNER }}/freeclaw"
+      - "docker.io/{{ .Env.DOCKERHUB_IMAGE_NAME }}"
+    tags:
+      - "{{ .Tag }}"
+      - "latest"
+    platforms:
+      - linux/amd64
+      - linux/arm64
+      - linux/riscv64
+
+archives:
+  - formats: [tar.gz]
+    # this name template makes the OS and Arch compatible with the results of `uname`.
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
+    # use zip for windows archives
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+
+nfpms:
+  - id: freeclaw
+    builds:
+      - freeclaw
+      - freeclaw-launcher
+      - freeclaw-launcher-tui
+    package_name: freeclaw
+    file_name_template: >-
+      {{ .PackageName }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "arm64" }}aarch64
+      {{- else if eq .Arch "arm" }}armv{{ .Arm }}
+      {{- else }}{{ .Arch }}{{ end }}
+    vendor: freeclaw
+    homepage: https://github.com/{{ .Env.GITHUB_REPOSITORY_OWNER }}/freeclaw
+    maintainer: freeclaw contributors
+    description: freeclaw - a tool for managing and running tasks
+    license: MIT
+    formats:
+      - rpm
+      - deb
+    bindir: /usr/bin
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+# upx:
+#    - enabled: true
+#      compress: best
+#      lzma: true
+
+release:
+  footer: >-
+
+    ---
+
+    Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
